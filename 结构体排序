@@ -1,0 +1,27 @@
+[转载] c++对结构体数组排序
+按结构体中某个成员进行排序，下面代码以成员b1为升序的排序
+#nclude<iostream> 
+#include<algorithm> 
+using namespace std; 
+struct st 
+{ 
+    int a1; 
+    int b1; 
+}arr[100]; 
+bool  cmp(const st &x, const st &y) 
+{ 
+    return x.b1<y.b1;//从小到大排<，若要从大到小排则> 
+} 
+int main() 
+{ 
+    int i; 
+    for (i=0;i<3;i++) 
+      cin>>arr[i].a1>>arr[i].b1;//对结构体进行输入  
+      sort(arr,arr+3,cmp); 
+    for (i=0;i<3;i++) 
+      cout<<arr[i].a1<<" "<<arr[i].b1<<endl; 
+}
+分类: 18暑假集训,C/C++,弱鸡技巧类
+« 上一篇：c/c++ 中#ifndef和#endif的作用及使用
+» 下一篇：Markdown测试
+posted @ 2018-08-08 17:01 Chicago_01 阅读(334) 评论(0) 编辑 收藏
